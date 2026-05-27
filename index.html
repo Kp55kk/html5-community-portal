@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <!-- Main -->
+    <section id="home">
+
+        <div id="welcomeBanner">
+            Welcome User!
+            <span style="color:red; font-weight:bold;">
+                Special Offer: Free Registration
+            </span>
+        </div>
+
+        <h1 class="highlight">Local Community Event Portal</h1>
+
+    </section>
+
+    <!-- Events -->
+    <section id="events">
+
+        <h2 class="highlight">Event Gallery</h2>
+
+        <table>
+            <tr>
+                <td>
+                    <img src="images/event1.jpg" alt="Music Event" title="Music Event" class="gallery-img">
+                    <p>Music Event</p>
+                </td>
+
+                <td>
+                    <img src="images/event2.jpg" alt="Food Festival" title="Food Festival" class="gallery-img">
+                    <p>Food Festival</p>
+                </td>
+
+                <td>
+                    <img src="images/event3.jpg" alt="Art Show" title="Art Show" class="gallery-img">
+                    <p>Art Show</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="images/event4.jpg" alt="Dance Show" title="Dance Show" class="gallery-img">
+                    <p>Dance Show</p>
+                </td>
+
+                <td>
+                    <img src="images/event5.jpg" alt="Workshop" title="Workshop" class="gallery-img">
+                    <p>Workshop</p>
+                </td>
+
+                <td>
+                    <img src="images/event6.jpg" alt="Community Meet" title="Community Meet" class="gallery-img">
+                    <p>Community Meet</p>
+                </td>
+            </tr>
+        </table>
+
+    </section>
+
+    <!-- Registration -->
+    <section>
+
+        <h2>Event Registration Form</h2>
+
+        <form id="eventForm">
+
+            <input type="text"
+                id="name"
+                placeholder="Enter Name"
+                required
+                autofocus>
+
+            <input type="email"
+                id="email"
+                placeholder="Enter Email"
+                required>
+
+            <input type="date" required>
+
+            <select id="eventType" onchange="showFee()">
+                <option value="">Select Event</option>
+                <option value="100">Music Event</option>
+                <option value="200">Workshop</option>
+                <option value="150">Food Festival</option>
+            </select>
+
+            <p id="feeDisplay"></p>
+
+            <input type="text"
+                id="phone"
+                placeholder="Enter Phone Number"
+                onblur="validatePhone()">
+
+            <textarea id="feedback"
+                placeholder="Enter feedback"
+                onkeyup="countCharacters()"></textarea>
+
+            <p id="charCount">Characters: 0</p>
+
+            <button type="submit" onclick="showConfirmation()">
+                Register
+            </button>
+
+            <output id="outputMessage"></output>
+
+        </form>
+
+    </section>
+
+    <!-- Video Section -->
+    <section>
+
+        <h2>Promo Video</h2>
+
+        <video width="400"
+            controls
+            oncanplay="videoReady()">
+
+            <source src="videos/promo.mp4" type="video/mp4">
+
+        </video>
+
+        <p id="videoMessage"></p>
+
+    </section>
+
+    <!-- Geolocation -->
+    <section>
+
+        <h2>Find Nearby Events</h2>
+
+        <button onclick="findLocation()">
+            Find Nearby Events
+        </button>
+
+        <p id="location"></p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+
+        <h3>Contact Us</h3>
+
+        <p>Email: community@gmail.com</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
